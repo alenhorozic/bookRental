@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bookRental.Factory;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace bookRental
 {
     class Member
     {
-        private Book __book;
+        private Book _book;
         private ICommand _command;
         private Rental _rental;
 
@@ -20,7 +21,7 @@ namespace bookRental
             _command = CommandFactory.GetCommand(option);
         }
 
-        public void SetProduct(Book book)
+        public void SetBook(Book book)
         {
             _book = book;
         }
@@ -30,9 +31,9 @@ namespace bookRental
             _rental.RunCommand(_command, _book);
         }
 
-        public void ShowOrder()
+        public void ShowRental()
         {
-            _rental.ShowCurrentProducts();
+            _rental.ShowCurrentBooks();
         }
     }
 }

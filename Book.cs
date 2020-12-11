@@ -4,24 +4,24 @@ using System.Text;
 
 namespace bookRental
 {
-    class Book
+    public class Book
     {
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int Amount { get; set; }
+        public string Titel { get; set; }
+        public int Pages { get; set; }
+        public string ReturDate { get; set; }
 
-        public Book(string name, decimal price, int amount)
+        public Book(string titel, int pages, string returDate)
         {
-            Name = name;
-            Price = price;
-            Amount = amount;
+            Titel = titel;
+            Pages = pages;
+            ReturDate = returDate;
         }
 
-        public void DisplayProduct()
+        public void DisplayBook()
         {
-            Console.WriteLine($"\nName: {Name}");
-            Console.WriteLine($"Price: {Price}");
-            Console.WriteLine($"Amount: {Amount}");
+            Console.WriteLine($"\nName: {Titel}");
+            Console.WriteLine($"Price: {Pages}");
+            Console.WriteLine($"Amount: {ReturDate}");
         }
     }
 }

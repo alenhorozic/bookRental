@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace bookRental
@@ -22,12 +23,12 @@ namespace bookRental
         {
             foreach (var prod in listOfbooks)
             {
-                prod.DisplayProduct();
+                prod.DisplayBook();
             }
 
             if (!listOfbooks.Any())
             {
-                Console.WriteLine("\nEmpty shopping list :(\n");
+                Console.WriteLine("\n  Finich list :(\n");
             }
 
             Console.WriteLine("----------------------------------");

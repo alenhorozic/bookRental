@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bookRental.Factory;
+using System;
 
 namespace bookRental
 {
@@ -6,47 +7,45 @@ namespace bookRental
     {
         static void Main(string[] args)
         {
-            //var user = new User();
+            
             var member = new Member();
 
-            //user.SetCommandOption(1 /*Add command*/);
-            //user.SetProduct(new Product("Dining table", 1500, 1));
-            //user.RunCommand();
-            member.SetCommandOption(1 /*Add command*/);
-            member.SetProduct(new Product("Dining table", 1500, 1));
+            
+            member.SetCommandOption(1 /*Add*/);
+            member.SetBook(new Book("C# in NET Core", 350, "2021-01-15"));
             member.RunCommand();
 
-            member.SetCommandOption(1 /*Add command*/);
-            member.SetProduct(new Product("dishwasher", 6000, 1));
+            member.SetCommandOption(1 /*Add*/);
+            member.SetBook(new Book("ASP.net", 478, "2021-02-05"));
             member.RunCommand();
-            member.ShowOrder();
+            member.ShowRental();
 
-            SetPayment("Debit", "MasterCard");
+            SetMemberCard("Free", "Student");
 
-            member.SetCommandOption(2 /*Redo command*/);
+            member.SetCommandOption(2 /*Redo*/);
             member.RunCommand();
-            member.ShowOrder();
+            member.ShowRental();
 
-            SetPayment("Credit", "Visa");
+            SetMemberCard("Free", "Senior");
 
-            member.SetCommandOption(3 /*Undo command*/);
+            member.SetCommandOption(3 /*Undo*/);
             member.RunCommand();
-            member.ShowOrder();
+            member.ShowRental();
 
-            SetPayment("Debit", "Maestro");
+            SetMemberCard("Pay", "Adult");
 
-            member.SetCommandOption(4 /*Clear command*/);
+            member.SetCommandOption(4 /*Clear*/);
             member.RunCommand();
-            member.ShowOrder();
+            member.ShowRental();
 
             Console.ReadLine();
         }
-
-        private static void SetPayment(string paymentType, string bankCard)
+        private static void SetMemberCard(string memberType, string memberFee)
         {
-            var type = PaymentFactory.CreatePaymentFactory(paymentType);
-            var card = type.GetPayment(bankCard);
-            Console.WriteLine(card.Payment() + "\n----------------------------------");
+            var type = MemberCardFactory.CreateMemberCardFactory(memberType);
+            var fee = type.GetMemberCard(memberFee);
+            Console.WriteLine(fee.MemberCard() + "\n----------------------------------");
         }
+
     }
 }
