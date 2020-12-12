@@ -8,20 +8,23 @@ namespace bookRental
     {
         public string Titel { get; set; }
         public int Pages { get; set; }
+        public string Autor { get; set; }
         public string ReturDate { get; set; }
 
-        public Book(string titel, int pages, string returDate)
+        public Book(string titel, string autor, int pages, string returDate)
         {
             Titel = titel;
+            Autor = autor;
             Pages = pages;
             ReturDate = returDate;
         }
 
         public void DisplayBook()
         {
-            Console.WriteLine($"\nName: {Titel}");
-            Console.WriteLine($"Price: {Pages}");
-            Console.WriteLine($"Amount: {ReturDate}");
+            Console.WriteLine($"\n Name: {Titel}");
+            Console.WriteLine($" Autor: {Autor}");
+            Console.WriteLine($" Price: {Pages}");
+            Console.WriteLine($" Amount: {ReturDate}");
         }
     }
 }

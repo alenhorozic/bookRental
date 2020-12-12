@@ -12,11 +12,11 @@ namespace bookRental
 
             
             member.SetCommandOption(1 /*Add*/);
-            member.SetBook(new Book("C# in NET Core", 350, "2021-01-15"));
+            member.SetBook(new Book("C# in NET Core", "Gaurar Arorra", 350, "2021-01-15"));
             member.RunCommand();
 
             member.SetCommandOption(1 /*Add*/);
-            member.SetBook(new Book("ASP.net", 478, "2021-02-05"));
+            member.SetBook(new Book("ASP.net", "Mark J Price", 478, "2021-02-05"));
             member.RunCommand();
             member.ShowRental();
 
@@ -44,7 +44,7 @@ namespace bookRental
         {
             var type = MemberCardFactory.CreateMemberCardFactory(memberType);
             var fee = type.GetMemberCard(memberFee);
-            Console.WriteLine(fee.MemberCard() + "\n----------------------------------");
+            Console.WriteLine(fee.MemberCard() + "\n*************************");
         }
 
     }

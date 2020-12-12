@@ -28,10 +28,10 @@ namespace bookRental
 
             if (!listOfbooks.Any())
             {
-                Console.WriteLine("\n  Finich list :(\n");
+                Console.WriteLine("\n  And Clear List :(\n");
             }
 
-            Console.WriteLine("----------------------------------");
+            Console.WriteLine("*************************");
         }
     }
 }
