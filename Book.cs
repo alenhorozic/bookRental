@@ -23,8 +23,8 @@ namespace bookRental
         {
             Console.WriteLine($"\n Name: {Titel}");
             Console.WriteLine($" Autor: {Autor}");
-            Console.WriteLine($" Price: {Pages}");
-            Console.WriteLine($" Amount: {ReturDate}");
+            Console.WriteLine($" Pages: {Pages}");
+            Console.WriteLine($" ReturDate: {ReturDate}");
         }
     }
 }
